@@ -89,7 +89,10 @@ class Sing_in_Page extends StatelessWidget {
                       height: getHeight(50),
                       width: getWidth(285),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, "/home", (route) => false);
+                        },
                         child: const Text("Log in"),
                       ),
                     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mehnatkash/screens/views/get_started_page/get_started_page.dart';
 import 'package:mehnatkash/screens/views/habarlar_page/habarlar_page.dart';
+import 'package:mehnatkash/screens/views/home_page/home_page.dart';
 import 'package:mehnatkash/screens/views/profile_page/glavni_profile_page/glavni_profile_page.dart';
 import 'package:mehnatkash/screens/views/saved_page/saved_page.dart';
 import 'package:mehnatkash/screens/views/sign_in/sign_in.dart';
@@ -33,6 +34,10 @@ class RouteGenerator {
       case "/xabar":
         return MaterialPageRoute(
           builder: (_) => const XabarlarPage(),
+        );
+      case "/home":
+        return MaterialPageRoute(
+          builder: (_) => const MyHomePage(),
         );
     }
     return null;
