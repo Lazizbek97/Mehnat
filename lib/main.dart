@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mehnat',
       theme: MainTheme.light,
-      initialRoute: "/profile",
+      initialRoute: "/xabar",
       onGenerateRoute: _router.routeGenerate,
     );
   }
