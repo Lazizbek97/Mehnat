@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainTheme {
-  static final Color _whiteColor = const Color(0xffFFFFFF);
-  static final Color _blackColor = const Color(0xff242424);
+  static const Color _whiteColor = Color(0xffFFFFFF);
+  static const Color _blackColor = Color(0xff242424);
 
   static ThemeData light = ThemeData(
     // ? FontFamily
@@ -16,7 +16,7 @@ class MainTheme {
       style: ElevatedButton.styleFrom(
         elevation: 0,
         primary: _blackColor,
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           color: _whiteColor,
         ),
       ),
@@ -37,7 +37,7 @@ class MainTheme {
 
     // ? Floating action Buttons styles
 
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: _blackColor,
       foregroundColor: _whiteColor,
     ),
