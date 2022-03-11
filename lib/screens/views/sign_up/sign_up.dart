@@ -11,7 +11,7 @@ class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);
 
   final TextEditingController _nameConstroller = TextEditingController();
-  final TextEditingController _emailConstroller = TextEditingController();
+  final TextEditingController _phonenumberController = TextEditingController();
   final TextEditingController _passwordConstroller = TextEditingController();
   final TextEditingController _confirmPasswordConstroller =
       TextEditingController();
@@ -70,7 +70,7 @@ class SignUpPage extends StatelessWidget {
                       EmailNameInput(
                           constroller: _nameConstroller, hintText: "Name"),
                       EmailNameInput(
-                          constroller: _emailConstroller, hintText: "Phone number"),
+                          constroller: _phonenumberController, hintText: "Phone number"),
                       PasswordInput(
                           passwordConstroller: _passwordConstroller,
                           hintText: "Password"),
