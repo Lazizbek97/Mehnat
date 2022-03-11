@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+
       debugShowCheckedModeBanner: false,
+      title: 'Mehnat',
       theme: MainTheme.light,
       initialRoute: "/",
       onGenerateRoute: _router.routeGenerate,
