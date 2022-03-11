@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mehnatkash/core/constants/constants.dart';
 import 'package:mehnatkash/core/utils/size_config.dart';
+import 'package:mehnatkash/screens/views/profile_page/glavni_profile_page/components/container_shadow.dart';
 
 class Profile_page extends StatelessWidget {
   const Profile_page({Key? key}) : super(key: key);
@@ -17,9 +18,9 @@ class Profile_page extends StatelessWidget {
         title: Text(
           "Profile",
           style: GoogleFonts.merriweather(
-              color: Constants.color30,
-              fontSize: Constants.boardingTitle1,
-              fontWeight: Constants.bold),
+            color: Constants.color30,
+            fontSize: Constants.boardingTitle1,
+          ),
         ),
         actions: [
           IconButton(
@@ -32,66 +33,99 @@ class Profile_page extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CardMy(
-              leading: CircleAvatar(
-                radius: getHeight(30),
+        child: Container(
+          height: getHeight(500),
+          padding: EdgeInsets.symmetric(horizontal: getHeight(20)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                children: [
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: getHeight(40),
+                        backgroundColor: Colors.white,
+                        child: Container(
+                          height: getHeight(90),
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                  "https://images.clipartlogo.com/files/istock/previews/9499/94991383-flat-cartoon-asian-man-vector-icon-asian-man-icon-illustration.jpg"),
+                            ),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: -5,
+                        right: -8,
+                        child: IconButton(
+                            onPressed: () async {},
+                            padding: const EdgeInsets.all(0),
+                            icon: const Icon(
+                              Icons.add_a_photo_outlined,
+                              color: Colors.white,
+                            )),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: getWidth(20),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Tolkinjon",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "+998900119597",
+                        style: TextStyle(
+                          color: Constants.color80,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
               ),
-              title: Text(
-                "Tolkinjon",
-                style: GoogleFonts.merriweather(
-                  color: Constants.color30,
-                ),
-              ),
-              subtitle: const Text("+998900119597"),
-              trailing: Text(
-                "5 ball",
-                style: GoogleFonts.merriweather(
-                    color: Constants.color30, fontWeight: Constants.bold),
-              ),
-            ),
-            CardMy(
-              title: const Text("Shaxsiy ma'lumotlar"),
-              trailing: const Icon(Icons.arrow_forward_ios),
-            ),
-            CardMy(
-              title: const Text("App settings"),
-              trailing: const Icon(Icons.arrow_forward_ios),
-            ),
-            CardMy(
-              title: const Text("History"),
-              trailing: const Icon(Icons.arrow_forward_ios),
-            ),
-            CardMy(
-              title: const Text("About us"),
-              trailing: const Icon(Icons.arrow_forward_ios),
-            )
-          ],
+              AccoutPageMenus(
+                  title: Text(
+                    "Shaxsiy ma'lumotlar",
+                    style: GoogleFonts.merriweather(color: Constants.color60),
+                  ),
+                  trailing: Constants.arrowIcon,
+                  subtitle: const Text("Ma'lumotlarni yangilash"),
+                  ontap: () {}),
+              AccoutPageMenus(
+                  title: Text("Dastur sozlamalari",
+                      style:
+                          GoogleFonts.merriweather(color: Constants.color60)),
+                  subtitle: const Text("Eslatmalar/Password/FAQ/Contact"),
+                  trailing: Constants.arrowIcon,
+                  ontap: () {}),
+              AccoutPageMenus(
+                  title: Text("Tarix",
+                      style:
+                          GoogleFonts.merriweather(color: Constants.color60)),
+                  subtitle: const Text("Buyurtmalar tarixi"),
+                  trailing: Constants.arrowIcon,
+                  ontap: () {}),
+              AccoutPageMenus(
+                title: Text("About us",
+                    style: GoogleFonts.merriweather(color: Constants.color60)),
+                subtitle: const Text("Dastur haqida"),
+                trailing: Constants.arrowIcon,
+              )
+            ],
+          ),
         ),
       ),
     );
   }
-}
 
-class CardMy extends StatelessWidget {
-  var leading;
-  var title;
-  var subtitle;
-  var trailing;
-  CardMy({Key? key, this.leading, this.title, this.subtitle, this.trailing})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        leading: leading,
-        title: title,
-        subtitle: subtitle,
-        trailing: trailing,
-      ),
-    );
-  }
+  aa() {}
 }

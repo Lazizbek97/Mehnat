@@ -34,4 +34,8 @@ class Constants {
   static String lampImage = 'assets/images/lamp.svg';
 
   // BorderRadius
+
+  // Icons
+
+  static Icon arrowIcon = const Icon(Icons.keyboard_arrow_right_outlined);
 }
