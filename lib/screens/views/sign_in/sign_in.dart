@@ -13,6 +13,7 @@ class Sing_in_Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -68,7 +69,8 @@ class Sing_in_Page extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     EmailNameInput(
-                        constroller: _emailConstroller, hintText: "Email"),
+                        constroller: _emailConstroller,
+                        hintText: "Phone number"),
                     PasswordInput(
                         passwordConstroller: _passwordConstroller,
                         hintText: "Password"),
@@ -92,7 +94,9 @@ class Sing_in_Page extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () => Navigator.pushNamed(context, "/signUp"),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/sign_up");
+                      },
                       child: Text(
                         "SIGN UP",
                         style: TextStyle(
