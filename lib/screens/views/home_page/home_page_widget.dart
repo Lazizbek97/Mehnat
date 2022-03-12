@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mehnatkash/core/constants/constants.dart';
 import 'package:mehnatkash/core/utils/size_config.dart';
+import 'package:mehnatkash/screens/providers/user_type_provider.dart';
 import 'package:mehnatkash/screens/views/home_page/components/post_widget.dart';
+import 'package:mehnatkash/screens/views/home_page/components/work_widget.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -13,6 +16,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           children: [
             IconButton(
@@ -27,13 +31,19 @@ class HomePage extends StatelessWidget {
                 child: CircleAvatar(
                     backgroundColor: Colors.transparent,
                     child: Image.asset(Constants.recruiter)),
+                initialValue: context.watch<UserTypeProvider>().userType,
+                onSelected: (v) {
+                  context.read<UserTypeProvider>().chnageUserType();
+                },
                 itemBuilder: (context) {
                   return [
                     const PopupMenuItem(
                       child: Text("Ishchi"),
+                      value: "worker",
                     ),
                     const PopupMenuItem(
                       child: Text("Ish beruvchi"),
+                      value: "employee",
                     ),
                   ];
                 }),
@@ -48,19 +58,18 @@ class HomePage extends StatelessWidget {
               height: getHeight(50),
               width: getWidth(340),
               child: TextFormField(
-                
                 decoration: InputDecoration(
                   hintText: "Ish izlash...",
-                  contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: getWidth(15)),
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: 0, horizontal: getWidth(15)),
                   focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black)),
-                  border:  OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(color: Colors.black)),
-                  enabledBorder:  OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(color: Colors.black)),
-
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.black)),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: const BorderSide(color: Colors.black)),
                   suffixIcon: IconButton(
                     onPressed: () {},
                     icon: SvgPicture.asset(Constants.filter),
@@ -94,9 +103,14 @@ class HomePage extends StatelessWidget {
                 );
               },
               itemBuilder: ((context, index) {
-                return PostWidget(
-                  index: index,
-                );
+                return Provider.of<UserTypeProvider>(context).userType ==
+                        "worker"
+                    ? PostWidget(
+                        index: index,
+                      )
+                    : WorkersWidget(
+                        index: index,
+                      );
               }),
             ),
           ),
