@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mehnatkash/core/utils/size_config.dart';
 
 class Constants {
   // Font Family
@@ -7,15 +8,15 @@ class Constants {
   static Color color60 = const Color(0xff606060);
   static Color color30 = const Color(0xff303030);
   static Color color90 = const Color(0xff909090);
-
   static Color dividerColor = const Color(0xff0fff0f0f0);
   static Color inputBorderColor = const Color(0xffE0E0E0);
 
   // Sizes
-  static double boardingTitle1 = 30;
-  static double boardingTitle2 = 24;
-  static double disTextSize = 14;
-  static double appbarTitle = 16;
+  static double boardingTitle1 = getHeight(30);
+  static double boardingTitle2 = getHeight(24);
+  static double disTextSize = getHeight(14);
+  static double appbarTitle = getHeight(16);
+   static double iconSize = getHeight(22);
 
   // FontWeight
   static FontWeight semiBold = FontWeight.w600;

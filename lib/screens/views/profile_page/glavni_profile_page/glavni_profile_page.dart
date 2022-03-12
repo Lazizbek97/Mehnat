@@ -19,7 +19,7 @@ class Profile_page extends StatelessWidget {
           "Profile",
           style: GoogleFonts.merriweather(
             color: Constants.color30,
-            fontSize: Constants.boardingTitle2,
+            fontSize: Constants.appbarTitle,
           ),
         ),
         actions: [
@@ -27,7 +27,7 @@ class Profile_page extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.logout,
-              size: Constants.boardingTitle1,
+              size: Constants.iconSize,
             ),
           ),
         ],
