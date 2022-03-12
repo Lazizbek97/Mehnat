@@ -106,7 +106,9 @@ class Profile_page extends StatelessWidget {
                           GoogleFonts.merriweather(color: Constants.color60)),
                   subtitle: const Text("Eslatmalar/Password/FAQ/Contact"),
                   trailing: Constants.arrowIcon,
-                  ontap: () {}),
+                  ontap: () {
+                    Navigator.pushNamed(context, "/setting");
+                  }),
               AccoutPageMenus(
                   title: Text("Tarix",
                       style:

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mehnatkash/core/constants/constants.dart';
 
-class HistoryPage extends StatelessWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+class ChangeLanguagePage extends StatelessWidget {
+  const ChangeLanguagePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +11,22 @@ class HistoryPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Tarix",
+          "Til tanlang",
           style: GoogleFonts.merriweather(fontSize: Constants.appbarTitle),
         ),
       ),
       body: SafeArea(
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
-          child: const Center(
-            child: Text("Empty"),
+          child: ListView.builder(
+            itemBuilder: (_, __) {
+              return const Card(
+                child: ListTile(
+                  title: Text("O'zbekcha"),
+                ),
+              );
+            },
           ),
-          
         ),
       ),
     );
