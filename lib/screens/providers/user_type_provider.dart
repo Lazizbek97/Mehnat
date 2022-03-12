@@ -6,6 +6,6 @@ class UserTypeProvider extends ChangeNotifier {
   chnageUserType() {
     userType == "worker" ? userType = "employee" : userType = "worker";
     notifyListeners();
-    print("object");
+    
   }
 }
