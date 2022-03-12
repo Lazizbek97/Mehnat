@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mehnat',
       theme: MainTheme.light,
-      initialRoute: "/profile",
+      initialRoute: "/home",
       onGenerateRoute: _router.routeGenerate,
     );
   }
