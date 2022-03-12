@@ -70,8 +70,7 @@ class SignUpPage extends StatelessWidget {
                       EmailNameInput(
                           constroller: _nameConstroller, hintText: "Name"),
                       EmailNameInput(
-                          constroller: _phonenumberController,
-                          hintText: "Phone number"),
+                          constroller: _phonenumberController, hintText: "Phone number"),
                       PasswordInput(
                           passwordConstroller: _passwordConstroller,
                           hintText: "Password"),
@@ -83,10 +82,7 @@ class SignUpPage extends StatelessWidget {
                         height: getHeight(50),
                         width: getWidth(285),
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, "/home", (route) => false);
-                          },
+                          onPressed: () {},
                           child: const Text("SIGN UP"),
                         ),
                       ),
@@ -102,9 +98,7 @@ class SignUpPage extends StatelessWidget {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, "/sign_in");
-                            },
+                            onPressed: () {},
                             child: Text(
                               "Sign In",
                               style: TextStyle(

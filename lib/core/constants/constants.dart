@@ -15,6 +15,7 @@ class Constants {
   static double boardingTitle1 = 30;
   static double boardingTitle2 = 24;
   static double disTextSize = 14;
+  static double appbarTitle = 16;
 
   // FontWeight
   static FontWeight semiBold = FontWeight.w600;

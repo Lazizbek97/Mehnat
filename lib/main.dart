@@ -17,11 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mehnat',
       theme: MainTheme.light,
-<<<<<<< HEAD
-      initialRoute: "/profile",
-=======
       initialRoute: "/",
->>>>>>> fc08c14 (home page postes added with navbar)
       onGenerateRoute: _router.routeGenerate,
     );
   }

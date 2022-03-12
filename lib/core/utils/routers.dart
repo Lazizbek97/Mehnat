@@ -3,7 +3,6 @@ import 'package:mehnatkash/screens/views/get_started_page/get_started_page.dart'
 import 'package:mehnatkash/screens/views/habarlar_page/habarlar_page.dart';
 import 'package:mehnatkash/screens/views/home_page/home_page.dart';
 import 'package:mehnatkash/screens/views/profile_page/glavni_profile_page/glavni_profile_page.dart';
-import 'package:mehnatkash/screens/views/profile_page/history_page/history_page.dart';
 import 'package:mehnatkash/screens/views/saved_page/saved_page.dart';
 import 'package:mehnatkash/screens/views/sign_in/sign_in.dart';
 import 'package:mehnatkash/screens/views/sign_up/sign_up.dart';
@@ -14,7 +13,7 @@ class RouteGenerator {
     switch (settings.name) {
       case "/":
         return MaterialPageRoute(
-          builder: (_) => const GetStartedPage(),
+          builder: (_) =>  MyHomePage(),
         );
       case "/sign_in":
         return MaterialPageRoute(
@@ -35,14 +34,6 @@ class RouteGenerator {
       case "/xabar":
         return MaterialPageRoute(
           builder: (_) => const XabarlarPage(),
-        );
-      case "/home":
-        return MaterialPageRoute(
-          builder: (_) => const MyHomePage(),
-        );
-         case "/history":
-        return MaterialPageRoute(
-          builder: (_) => const HistoryPage(),
         );
     }
     return null;

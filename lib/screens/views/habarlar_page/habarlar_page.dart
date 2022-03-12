@@ -15,7 +15,7 @@ class XabarlarPage extends StatelessWidget {
           "Xabarlar",
           style: GoogleFonts.merriweather(
             color: Constants.color30,
-            fontSize: Constants.boardingTitle2,
+            fontSize: Constants.appbarTitle,
           ),
         ),
       ),
