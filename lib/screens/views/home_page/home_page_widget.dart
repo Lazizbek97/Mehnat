@@ -60,6 +60,7 @@ class HomePage extends StatelessWidget {
                   enabledBorder:  OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(color: Colors.black)),
+
                   suffixIcon: IconButton(
                     onPressed: () {},
                     icon: SvgPicture.asset(Constants.filter),

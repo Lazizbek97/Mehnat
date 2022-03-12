@@ -14,7 +14,8 @@ class RouteGenerator {
     switch (settings.name) {
       case "/":
         return MaterialPageRoute(
-          builder: (_) => const MyHomePage(),
+
+          builder: (_) => const AnnouncementPage(),
         );
       case "/sign_in":
         return MaterialPageRoute(
@@ -44,10 +45,12 @@ class RouteGenerator {
         );
 
 
+
       case "/announcement":
         return MaterialPageRoute(
           builder: (_) => const AnnouncementPage(),
         );
+
     }
     return null;
   }

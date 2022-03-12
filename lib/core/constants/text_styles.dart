@@ -9,4 +9,5 @@ class MyTextStyles {
   static const TextStyle announcementPageButtonTextStyle = TextStyle(
     fontSize: 18,
   );
+
 }

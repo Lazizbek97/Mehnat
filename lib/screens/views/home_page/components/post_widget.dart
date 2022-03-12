@@ -80,4 +80,8 @@ class PostWidget extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9501b891594bb47a8578863c44e54b4f8ab4c555

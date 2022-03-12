@@ -199,4 +199,3 @@ class AnnouncementPage extends StatelessWidget {
     );
   }
 }
-
