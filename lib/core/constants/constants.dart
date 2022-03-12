@@ -38,4 +38,17 @@ class Constants {
   // Icons
 
   static Icon arrowIcon = const Icon(Icons.keyboard_arrow_right_outlined);
+  static String recruiter = 'assets/images/recruitment.png';
+  static String worker = 'assets/images/builder.png';
+  static String filter = 'assets/images/filter.svg';
+
+  // Bottombar Icons
+  static String home = 'assets/images/home.svg';
+  static String home_filled = 'assets/images/home_filled.svg';
+  static String bell = 'assets/images/bell.svg';
+  static String bell_filled = 'assets/images/bell_filled.svg';
+  static String person = 'assets/images/person.svg';
+  static String person_filled = 'assets/images/person_filled.svg';
+  static String bookmark = 'assets/images/bookmark.svg';
+  static String bookmark_filled = 'assets/images/bookmark_filled.svg';
 }
