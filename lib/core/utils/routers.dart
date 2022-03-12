@@ -42,16 +42,15 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const MyHomePage(),
         );
-<<<<<<< HEAD
-         case "/history":
+
+      case "/history":
         return MaterialPageRoute(
           builder: (_) => const HistoryPage(),
-=======
+        );
 
       case "/announcement":
         return MaterialPageRoute(
           builder: (_) => const AnnouncementPage(),
->>>>>>> 90cc263 (announcement page tayyor bo'layapti)
         );
     }
     return null;
