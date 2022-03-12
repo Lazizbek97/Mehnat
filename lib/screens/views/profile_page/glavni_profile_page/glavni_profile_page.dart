@@ -113,7 +113,9 @@ class Profile_page extends StatelessWidget {
                           GoogleFonts.merriweather(color: Constants.color60)),
                   subtitle: const Text("Buyurtmalar tarixi"),
                   trailing: Constants.arrowIcon,
-                  ontap: () {}),
+                  ontap: () {
+                    Navigator.pushNamed(context, "/history");
+                  }),
               AccoutPageMenus(
                 title: Text("About us",
                     style: GoogleFonts.merriweather(color: Constants.color60)),
