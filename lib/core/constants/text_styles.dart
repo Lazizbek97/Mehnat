@@ -10,4 +10,10 @@ class MyTextStyles {
     fontSize: 18,
   );
 
+  static const TextStyle keraksizStyle = TextStyle(
+    fontSize: 18,
+  );
+
+
+
 }
