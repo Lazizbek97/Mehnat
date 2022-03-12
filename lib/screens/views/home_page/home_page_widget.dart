@@ -46,11 +46,20 @@ class HomePage extends StatelessWidget {
           Center(
             child: SizedBox(
               height: getHeight(50),
-              width: getWidth(320),
+              width: getWidth(340),
               child: TextFormField(
+                
                 decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  enabledBorder: const OutlineInputBorder(),
+                  hintText: "Ish izlash...",
+                  contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: getWidth(15)),
+                  focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                  border:  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.black)),
+                  enabledBorder:  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.black)),
                   suffixIcon: IconButton(
                     onPressed: () {},
                     icon: SvgPicture.asset(Constants.filter),
@@ -95,4 +104,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
