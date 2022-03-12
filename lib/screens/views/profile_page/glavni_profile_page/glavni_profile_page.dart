@@ -25,9 +25,9 @@ class Profile_page extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.logout,
-              size: 22,
+              size: Constants.iconSize,
             ),
           ),
         ],
@@ -115,7 +115,9 @@ class Profile_page extends StatelessWidget {
                           GoogleFonts.merriweather(color: Constants.color60)),
                   subtitle: const Text("Buyurtmalar tarixi"),
                   trailing: Constants.arrowIcon,
-                  ontap: () {}),
+                  ontap: () {
+                    Navigator.pushNamed(context, "/history");
+                  }),
               AccoutPageMenus(
                 title: Text("About us",
                     style: GoogleFonts.merriweather(color: Constants.color60)),

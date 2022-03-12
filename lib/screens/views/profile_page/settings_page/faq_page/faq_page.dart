@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mehnatkash/core/constants/constants.dart';
 
-class HistoryPage extends StatelessWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+class FaqPage extends StatelessWidget {
+  const FaqPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +11,13 @@ class HistoryPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Tarix",
+          "Xavfsizlik",
           style: GoogleFonts.merriweather(fontSize: Constants.appbarTitle),
         ),
       ),
-      body: SafeArea(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          child: const Center(
-            child: Text("Empty"),
-          ),
-          
+      body: const SafeArea(
+        child: Center(
+          child: Text("FAQ"),
         ),
       ),
     );

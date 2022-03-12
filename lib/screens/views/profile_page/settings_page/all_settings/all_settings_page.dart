@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mehnatkash/core/constants/constants.dart';
@@ -50,6 +49,9 @@ class All_settings_page extends StatelessWidget {
                 title: const Text("FAQ"),
                 subtitle: const Text("Xavfsizlik"),
                 trailing: Constants.arrowIcon,
+                ontap: () {
+                  Navigator.pushNamed(context, "/faq");
+                },
               ),
               AccoutPageMenus(
                 title: const Text("Biz bilan aloqa"),

@@ -16,7 +16,7 @@ class Constants {
   static double boardingTitle2 = getHeight(24);
   static double disTextSize = getHeight(14);
   static double appbarTitle = getHeight(16);
-  static double iconSize = getHeight(22);
+   static double iconSize = getHeight(22);
 
   // FontWeight
   static FontWeight semiBold = FontWeight.w600;
@@ -53,6 +53,4 @@ class Constants {
   static String person_filled = 'assets/images/person_filled.svg';
   static String bookmark = 'assets/images/bookmark.svg';
   static String bookmark_filled = 'assets/images/bookmark_filled.svg';
-
-  static String blabla = "blablalbalbj";
 }
