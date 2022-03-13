@@ -90,9 +90,11 @@ class Sing_in_Page extends StatelessWidget {
                       height: getHeight(50),
                       width: getWidth(285),
                       child: ElevatedButton(
-                        onPressed: () {
-                          LoginWithPhone.SignIn(
-                              context, _emailConstroller.text);
+                        onPressed: () async {
+                          LoginWithPhone.SignIn(context, _emailConstroller.text)
+                              .whenComplete(() {
+                            Navigator.pushNamed(context, "/home");
+                          });
                         },
                         child: const Text("Log in"),
                       ),

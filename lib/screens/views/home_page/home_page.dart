@@ -18,7 +18,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _pageIndex = 0;
   final List _pages = [
-    const HomePage(),
+     HomePage(),
     const XabarlarPage(),
      PostAddingPage(),
     const SavedPage(),

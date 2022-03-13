@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mehnatkash/core/constants/constants.dart';
+import 'package:mehnatkash/core/models/userModel.dart';
 import 'package:mehnatkash/core/utils/size_config.dart';
 import 'package:mehnatkash/core/widgets/email_input.dart';
 import 'package:mehnatkash/core/widgets/top_login_profile.dart';
@@ -17,6 +19,7 @@ class SignUpPage extends StatelessWidget {
   final TextEditingController _confirmPasswordConstroller =
       TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +90,37 @@ class SignUpPage extends StatelessWidget {
                           onPressed: () async {
                             LoginWithPhone.loginWithPhone(
                                 _phonenumberController.text);
-                            Navigator.pushNamed(context, "/sms");
+                            _firebaseFirestore
+                                .collection("Elon")
+                                .doc(_phonenumberController.text)
+                                .set(JobModel(
+                                        categories: [],
+                                        date: "",
+                                        disc: "",
+                                        locationModel:
+                                            LocationModel(lat: 0, long: 0),
+                                        pictures: [],
+                                        price: 0,
+                                        telNum: "",
+                                        title: "")
+                                    .toJson());
+                            _firebaseFirestore
+                                .collection("User")
+                                .doc(_phonenumberController.text)
+                                .set(UserModel(
+                                    ball: 0,
+                                    disc: "",
+                                    jobCategories: [],
+                                    nomer: _phonenumberController.text,
+                                    picture: "",
+                                    jobModel: [],
+                                    locationModel:
+                                        LocationModel(lat: 0, long: 0),
+                                    name: _nameConstroller.text,
+                                    pasportId: "",
+                                    ratingModel: []).toJson());
+                            Navigator.pushNamed(context, "/sms",
+                                arguments: _phonenumberController.text);
                           },
                           child: const Text("SIGN UP"),
                         ),

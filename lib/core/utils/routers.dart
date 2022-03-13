@@ -72,7 +72,7 @@ class RouteGenerator {
         );
           case "/sms":
         return MaterialPageRoute(
-          builder: (_) => SmsCode(),
+          builder: (_) => SmsCode(nomer: args),
         );
     }
     return null;

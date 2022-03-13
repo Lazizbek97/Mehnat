@@ -14,6 +14,7 @@ class UserModelJson {
     "ratings": [
       {"ball": 0.0, "pictures": [], "comment": ""}
     ], 
+    "notif":[],
     "jobsDone": [
       {
         "pictures": [],

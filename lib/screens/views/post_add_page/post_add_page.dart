@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mehnatkash/core/constants/constants.dart';
@@ -29,11 +30,13 @@ class _PostAddingPageState extends State<PostAddingPage> {
   final _formKey4 = GlobalKey<FormState>();
   final _formKey5 = GlobalKey<FormState>();
   final _formKey6 = GlobalKey<FormState>();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   final ImagePicker _picker = ImagePicker();
   File picture = File("");
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
   final FirebaseStorage _storage = FirebaseStorage.instance;
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -79,7 +82,10 @@ class _PostAddingPageState extends State<PostAddingPage> {
                                 .putFile(picture)
                                 .then((p0) async {
                               String url = await p0.ref.getDownloadURL();
-                              _firebaseFirestore.doc("").update({"img": url});
+                              _firebaseFirestore
+                                  .collection("Elon")
+                                  .doc("${_auth.currentUser!.phoneNumber}")
+                                  .update({"pictures": url});
                             });
                             return null;
                           });
@@ -135,15 +141,32 @@ class _PostAddingPageState extends State<PostAddingPage> {
                   child: const Text("Saqlash"),
                   style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, getHeight(50))),
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey1.currentState!.validate() &&
                         _formKey2.currentState!.validate() &&
                         _formKey3.currentState!.validate() &&
                         _formKey4.currentState!.validate() &&
                         _formKey5.currentState!.validate() &&
                         _formKey6.currentState!.validate()) {
-                          
-                        }
+                      await _firebaseFirestore
+                          .collection("Elon")
+                          .doc("${_auth.currentUser!.phoneNumber}")
+                          .update({
+                        "title": _ishNomiController.text,
+                        "disc": _descriptionController.text,
+                        "price": int.parse(_priceController.text),
+                        "telNum": _phoneNumberController.text,
+                        "date": _dataController.text
+                      });
+
+                      _ishNomiController.clear();
+                      _descriptionController.clear();
+                      _priceController.clear();
+                      _dataController.clear();
+                      _locationController.clear();
+                      _phoneNumberController.clear();
+                      setState(() {});
+                    }
                   },
                 )
               ],
