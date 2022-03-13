@@ -5,6 +5,7 @@ import 'package:mehnatkash/core/utils/size_config.dart';
 import 'package:mehnatkash/core/widgets/email_input.dart';
 import 'package:mehnatkash/core/widgets/password_input.dart';
 import 'package:mehnatkash/core/widgets/top_login_profile.dart';
+import 'package:mehnatkash/screens/views/sign_in/components/sign_in_func.dart';
 
 class Sing_in_Page extends StatelessWidget {
   Sing_in_Page({Key? key}) : super(key: key);
@@ -90,8 +91,8 @@ class Sing_in_Page extends StatelessWidget {
                       width: getWidth(285),
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(
-                              context, "/home", (route) => false);
+                          LoginWithPhone.SignIn(
+                              context, _emailConstroller.text);
                         },
                         child: const Text("Log in"),
                       ),

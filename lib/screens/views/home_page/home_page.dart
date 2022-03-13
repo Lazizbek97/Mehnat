@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List _pages = [
     const HomePage(),
     const XabarlarPage(),
-    const PostAddingPage(),
+     PostAddingPage(),
     const SavedPage(),
     const Profile_page(),
   ];

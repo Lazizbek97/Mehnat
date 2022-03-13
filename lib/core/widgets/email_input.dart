@@ -35,6 +35,11 @@ class EmailNameInput extends StatelessWidget {
           ),
         ),
       ),
+      validator: (val) {
+        if (val!.isEmpty) {
+          return "Bo'sh qolishi mumkin emas!";
+        }
+      },
     );
   }
 }

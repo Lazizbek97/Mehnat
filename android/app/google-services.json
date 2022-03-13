@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "530914917074",
+    "project_id": "imehnat-35a33",
+    "storage_bucket": "imehnat-35a33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530914917074:android:e38f76d76c5f77e0580b0b",
+        "android_client_info": {
+          "package_name": "com.imehnat.mehnatkash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530914917074-1ipkva9a521toofeqg42qu35ssh2rbcg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imehnat.mehnatkash",
+            "certificate_hash": "bf6c96cc0113ca5bafd9d49df452be8a124a275e"
+          }
+        },
+        {
+          "client_id": "530914917074-53ug5o6au39qkl2v0pokg0ruhsft2hph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0y3FjXDCxs3RWusbLqrFgf8IZVb9PCMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530914917074-53ug5o6au39qkl2v0pokg0ruhsft2hph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

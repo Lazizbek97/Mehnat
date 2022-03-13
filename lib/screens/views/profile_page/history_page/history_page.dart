@@ -21,7 +21,6 @@ class HistoryPage extends StatelessWidget {
           child: const Center(
             child: Text("Empty"),
           ),
-          
         ),
       ),
     );

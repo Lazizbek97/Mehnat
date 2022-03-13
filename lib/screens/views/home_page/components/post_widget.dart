@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:mehnatkash/core/constants/constants.dart';
 import 'package:mehnatkash/core/utils/size_config.dart';
 
 class PostWidget extends StatelessWidget {
-  PostWidget({
-    Key? key,
-    required this.index,
-  }) : super(key: key);
+  var image;
+  var title;
+  var price;
+  var sana;
+
+  PostWidget(
+      {Key? key, required this.index, this.image, this.price, this.title,this.sana})
+      : super(key: key);
   int index;
   @override
   Widget build(BuildContext context) {
@@ -33,8 +39,7 @@ class PostWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image:
-                    NetworkImage("https://source.unsplash.com/random/$index"),
+                image: image,
               ),
             ),
           ),
@@ -46,7 +51,7 @@ class PostWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  "Title comes here Title comes here Title comes here",
+                  title,
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -54,8 +59,8 @@ class PostWidget extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const Text(
-                  "19.03.2022~23.03.2022",
+                Text(
+                  "${sana.toString()}",
                 ),
                 Row(
                   children: [
@@ -64,12 +69,16 @@ class PostWidget extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.w800),
                     ),
                     Text(
-                      " 12,300",
+                      " ${price.toString()}",
                       style: TextStyle(
                         fontSize: getHeight(17),
                         fontWeight: FontWeight.w700,
                         color: Colors.green,
                       ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: SvgPicture.asset(Constants.bookmark),
                     )
                   ],
                 )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mehnatkash/screens/views/announcement_page/announcement_page.dart';
 import 'package:mehnatkash/screens/views/get_started_page/get_started_page.dart';
 import 'package:mehnatkash/screens/views/habarlar_page/habarlar_page.dart';
 import 'package:mehnatkash/screens/views/home_page/home_page.dart';
@@ -6,11 +7,12 @@ import 'package:mehnatkash/screens/views/profile_page/glavni_profile_page/glavni
 import 'package:mehnatkash/screens/views/profile_page/history_page/history_page.dart';
 import 'package:mehnatkash/screens/views/profile_page/settings_page/all_settings/all_settings_page.dart';
 import 'package:mehnatkash/screens/views/profile_page/settings_page/change_passwords/change_password.dart';
-import 'package:mehnatkash/screens/views/profile_page/settings_page/faq_page/faq_page.dart';
 import 'package:mehnatkash/screens/views/profile_page/settings_page/tilni_ozgartirish_page/tilni_ozgartirish_page.dart';
 import 'package:mehnatkash/screens/views/saved_page/saved_page.dart';
+
 import 'package:mehnatkash/screens/views/sign_in/sign_in.dart';
 import 'package:mehnatkash/screens/views/sign_up/sign_up.dart';
+import 'package:mehnatkash/screens/views/sign_up/sms_code/sms_code.dart';
 
 class RouteGenerator {
   Route? routeGenerate(RouteSettings settings) {
@@ -28,6 +30,7 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => SignUpPage(),
         );
+
       case "/profile":
         return MaterialPageRoute(
           builder: (_) => const Profile_page(),
@@ -40,31 +43,37 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const XabarlarPage(),
         );
+
       case "/home":
         return MaterialPageRoute(
           builder: (_) => const MyHomePage(),
         );
-         case "/history":
+
+      case "/announcement":
         return MaterialPageRoute(
-          builder: (_) => const HistoryPage(),
+          builder: (_) => const AnnouncementPage(),
         );
-          case "/setting":
+
+      case "/setting":
         return MaterialPageRoute(
           builder: (_) => const All_settings_page(),
         );
-         case "/language":
+      case "/language":
         return MaterialPageRoute(
           builder: (_) => const ChangeLanguagePage(),
         );
-          case "/password":
+      case "/password":
         return MaterialPageRoute(
-          builder: (_) =>  ChangePasswordPage(),
+          builder: (_) => ChangePasswordPage(),
         );
-        case "/faq":
+        case "/history":
         return MaterialPageRoute(
-          builder: (_) =>  FaqPage(),
+          builder: (_) => HistoryPage(),
         );
-         
+          case "/sms":
+        return MaterialPageRoute(
+          builder: (_) => SmsCode(),
+        );
     }
     return null;
   }

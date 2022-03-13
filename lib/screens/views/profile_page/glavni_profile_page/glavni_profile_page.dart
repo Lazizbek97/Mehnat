@@ -25,9 +25,9 @@ class Profile_page extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.logout,
-              size: Constants.iconSize,
+              size: 22,
             ),
           ),
         ],

@@ -30,7 +30,7 @@ class ChangePasswordPage extends StatelessWidget {
                 height: getHeight(30),
               ),
               Text(
-                "Eski parolni kiriting:",
+                "Eski parolni kiriting::",
                 style:
                     GoogleFonts.merriweather(fontSize: Constants.appbarTitle),
               ),

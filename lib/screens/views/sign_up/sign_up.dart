@@ -4,6 +4,7 @@ import 'package:mehnatkash/core/constants/constants.dart';
 import 'package:mehnatkash/core/utils/size_config.dart';
 import 'package:mehnatkash/core/widgets/email_input.dart';
 import 'package:mehnatkash/core/widgets/top_login_profile.dart';
+import 'package:mehnatkash/screens/views/sign_in/components/sign_in_func.dart';
 
 import '../../../core/widgets/password_input.dart';
 
@@ -83,9 +84,10 @@ class SignUpPage extends StatelessWidget {
                         height: getHeight(50),
                         width: getWidth(285),
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, "/home", (route) => false);
+                          onPressed: () async {
+                            LoginWithPhone.loginWithPhone(
+                                _phonenumberController.text);
+                            Navigator.pushNamed(context, "/sms");
                           },
                           child: const Text("SIGN UP"),
                         ),

@@ -9,6 +9,7 @@ class All_settings_page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -20,45 +21,45 @@ class All_settings_page extends StatelessWidget {
       body: SafeArea(
         child: SizedBox(
           height: getHeight(450),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AccoutPageMenus(
-                title: const Text("Eslatmalar"),
-                subtitle: const Text("Eslatilsinmi?"),
-                trailing: Switch(value: false, onChanged: (val) {}),
-              ),
-              AccoutPageMenus(
-                title: const Text("Tilni o'zgartirish"),
-                subtitle: const Text("Tilni tanlang"),
-                trailing: Constants.arrowIcon,
-                ontap: () {
-                  Navigator.pushNamed(context, "/language");
-                },
-              ),
-              AccoutPageMenus(
-                title: const Text("Parolni o'zgartirish"),
-                subtitle: const Text("Yangi parol o'rnatish"),
-                trailing: Constants.arrowIcon,
-                ontap: () {
-                  Navigator.pushNamed(context, "/password");
-                },
-              ),
-              AccoutPageMenus(
-                title: const Text("FAQ"),
-                subtitle: const Text("Xavfsizlik"),
-                trailing: Constants.arrowIcon,
-                ontap: () {
-                  Navigator.pushNamed(context, "/faq");
-                },
-              ),
-              AccoutPageMenus(
-                title: const Text("Biz bilan aloqa"),
-                subtitle: const Text("Contact"),
-                trailing: Constants.arrowIcon,
-              )
-            ],
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AccoutPageMenus(
+                  title: const Text("Eslatmalar"),
+                  subtitle: const Text("Eslatilsinmi?"),
+                  trailing: Switch(value: false, onChanged: (val) {}),
+                ),
+                AccoutPageMenus(
+                  title: const Text("Tilni o'zgartirish"),
+                  subtitle: const Text("Tilni tanlang"),
+                  trailing: Constants.arrowIcon,
+                  ontap: () {
+                    Navigator.pushNamed(context, "/language");
+                  },
+                ),
+                AccoutPageMenus(
+                  title: const Text("Parolni o'zgartirish"),
+                  subtitle: const Text("Yangi parol o'rnatish"),
+                  trailing: Constants.arrowIcon,
+                  ontap: () {
+                    Navigator.pushNamed(context, "/password");
+                  },
+                ),
+                AccoutPageMenus(
+                  title: const Text("FAQ"),
+                  subtitle: const Text("Xavfsizlik"),
+                  trailing: Constants.arrowIcon,
+                ),
+                AccoutPageMenus(
+                  title: const Text("Biz bilan aloqa"),
+                  subtitle: const Text("Contact"),
+                  trailing: Constants.arrowIcon,
+                )
+              ],
+            ),
           ),
         ),
       ),
