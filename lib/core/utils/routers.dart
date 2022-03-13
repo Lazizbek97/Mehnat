@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mehnatkash/core/models/userModel.dart';
 import 'package:mehnatkash/screens/views/announcement_page/announcement_page.dart';
 import 'package:mehnatkash/screens/views/get_started_page/get_started_page.dart';
 import 'package:mehnatkash/screens/views/habarlar_page/habarlar_page.dart';
@@ -51,7 +52,7 @@ class RouteGenerator {
 
       case "/announcement":
         return MaterialPageRoute(
-          builder: (_) => const AnnouncementPage(),
+          builder: (_) =>  AnnouncementPage(data: args),
         );
 
       case "/setting":

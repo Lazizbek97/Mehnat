@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mehnatkash/core/constants/text_styles.dart';
+import 'package:mehnatkash/core/models/userModel.dart';
 import 'package:mehnatkash/core/utils/size_config.dart';
 
 class AnnouncementPage extends StatelessWidget {
-  const AnnouncementPage({Key? key}) : super(key: key);
+  var data;
+  AnnouncementPage({Key? key, this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +28,12 @@ class AnnouncementPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Expanded(
+                          Expanded(
                             flex: 1,
                             child: SizedBox(
                               child: Text(
-                                "Tajribali, mohir duradgor kerak",
-                                style: TextStyle(
+                                data["title"],
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 25),
                               ),
                             ),
@@ -41,11 +43,10 @@ class AnnouncementPage extends StatelessWidget {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 25),
                           ),
-                          const Expanded(
+                          Expanded(
                             flex: 3,
                             child: SizedBox(
-                              child: Text(
-                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
+                              child: Text(data["disc"]),
                             ),
                           ),
                           Container(
@@ -171,13 +172,11 @@ class AnnouncementPage extends StatelessWidget {
       flexibleSpace: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 0.55,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-              image: NetworkImage(
-                  "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"),
-              fit: BoxFit.cover),
+              image: NetworkImage("${data!['pictures']}"), fit: BoxFit.cover),
           color: Colors.green,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(30),
             bottomRight: Radius.circular(30),
           ),
